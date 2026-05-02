@@ -23,23 +23,25 @@ $( document ).ready( function () {
 
 // Dark mode toggle — runs immediately since this script is deferred (DOM already parsed)
 (function() {
-    var btn = document.getElementById('theme-toggle');
-    var icon = document.getElementById('theme-icon');
+    var btns = document.querySelectorAll('.theme-toggle-btn');
+    var icons = document.querySelectorAll('.theme-icon');
 
-    function updateIcon() {
+    function updateIcons() {
         var dark = document.documentElement.classList.contains('dark-mode');
-        if (icon) icon.className = dark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+        icons.forEach(function(icon) {
+            icon.className = (dark ? 'fa fa-sun-o' : 'fa fa-moon-o') + ' theme-icon';
+        });
     }
 
-    updateIcon();
+    updateIcons();
 
-    if (btn) {
+    btns.forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             var dark = document.documentElement.classList.toggle('dark-mode');
             document.documentElement.style.backgroundColor = dark ? '#1a1d20' : '';
             localStorage.setItem('nerva-docs-theme', dark ? 'dark' : 'light');
-            updateIcon();
+            updateIcons();
         });
-    }
+    });
 }());

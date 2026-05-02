@@ -77,6 +77,9 @@
 	{%- block site_name %}
 	<a class="navbar-brand" href="{{ nav.homepage.url|url }}"><img src="{{ base_url }}/img/logo.ico" alt="{{ config.site_name }}" width="22" height="22"> {{ config.site_name }}</a>
 	{%- endblock %}
+	<a href="#" class="nav-link theme-toggle-btn d-md-none ml-auto" title="Toggle dark/light mode">
+          <i class="fa fa-moon-o theme-icon"></i>
+        </a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
 	</button>
@@ -167,8 +170,8 @@
             {%- endblock %}
 
             <li class="nav-item">
-              <a class="nav-link" href="#" id="theme-toggle" title="Toggle dark/light mode">
-                <i class="fa fa-moon-o" id="theme-icon"></i>
+              <a class="nav-link theme-toggle-btn" href="#" title="Toggle dark/light mode">
+                <i class="fa fa-moon-o theme-icon"></i>
               </a>
             </li>
           </ul>
