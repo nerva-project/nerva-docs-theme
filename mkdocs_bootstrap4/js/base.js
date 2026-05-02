@@ -19,7 +19,10 @@ $( document ).ready( function () {
         $(this).attr('src',src);
     });
     $('.metadata').detach().insertAfter( '#content h1:first' );
+} );
 
+// Dark mode toggle — runs immediately since this script is deferred (DOM already parsed)
+(function() {
     var btn = document.getElementById('theme-toggle');
     var icon = document.getElementById('theme-icon');
 
@@ -39,4 +42,4 @@ $( document ).ready( function () {
             updateIcon();
         });
     }
-} );
+}());
