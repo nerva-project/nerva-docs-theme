@@ -19,4 +19,24 @@ $( document ).ready( function () {
         $(this).attr('src',src);
     });
     $('.metadata').detach().insertAfter( '#content h1:first' );
+
+    var btn = document.getElementById('theme-toggle');
+    var icon = document.getElementById('theme-icon');
+
+    function updateIcon() {
+        var dark = document.documentElement.classList.contains('dark-mode');
+        if (icon) icon.className = dark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+    }
+
+    updateIcon();
+
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var dark = document.documentElement.classList.toggle('dark-mode');
+            document.documentElement.style.backgroundColor = dark ? '#1a1d20' : '';
+            localStorage.setItem('nerva-docs-theme', dark ? 'dark' : 'light');
+            updateIcon();
+        });
+    }
 } );

@@ -7,9 +7,7 @@
         window.addEventListener("hashchange", shiftWindow);
         function load() { if (window.location.hash) shiftWindow(); }
       </script>
-      <script>(function(){var d=localStorage.getItem('nerva-docs-theme')==='dark';if(d)document.documentElement.classList.add('dark-mode');document.documentElement.style.backgroundColor=d?'#1a1d20':'';})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark-mode');document.documentElement.style.backgroundColor=d?'#1a1d20':'';localStorage.setItem('nerva-docs-theme',d?'dark':'light');var i=document.getElementById('theme-icon');if(i)i.className=d?'fa fa-sun-o':'fa fa-moon-o';}
-document.addEventListener('DOMContentLoaded',function(){var d=document.documentElement.classList.contains('dark-mode');var i=document.getElementById('theme-icon');if(i)i.className=d?'fa fa-sun-o':'fa fa-moon-o';});</script>
+      <script>(function(){var d=localStorage.getItem('nerva-docs-theme')==='dark';if(d)document.documentElement.classList.add('dark-mode');document.documentElement.style.backgroundColor=d?'#1a1d20':'';})();</script>
       {%- block site_meta %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -169,7 +167,7 @@ document.addEventListener('DOMContentLoaded',function(){var d=document.documentE
             {%- endblock %}
 
             <li class="nav-item">
-              <a class="nav-link" href="#" id="theme-toggle" onclick="toggleTheme(); return false;" title="Toggle dark/light mode">
+              <a class="nav-link" href="#" id="theme-toggle" title="Toggle dark/light mode">
                 <i class="fa fa-moon-o" id="theme-icon"></i>
               </a>
             </li>
