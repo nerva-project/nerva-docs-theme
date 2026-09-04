@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-hidden="true">
+  <title>Contributor</title>
+  <circle cx="16" cy="16" r="16" fill="#c8d0d6"/>
+  <circle cx="16" cy="12.5" r="5.5" fill="#8b98a3"/>
+  <path d="M4.6 27.4a11.8 11.8 0 0 1 22.8 0A16 16 0 0 1 16 32a16 16 0 0 1-11.4-4.6z" fill="#8b98a3"/>
+</svg>

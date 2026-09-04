@@ -145,6 +145,10 @@
     backdrop = document.createElement('div');
     backdrop.className = 'modal-backdrop show';
     document.body.appendChild(backdrop);
+    // Hiding the scrollbar narrows the viewport, so pad by exactly its width
+    // to stop the page jumping sideways. The Bootstrap bundle did this too.
+    var gutter = window.innerWidth - document.documentElement.clientWidth;
+    if (gutter > 0) document.body.style.paddingRight = gutter + 'px';
     document.body.classList.add('modal-open');
     el.classList.add('show');
     el.style.display = 'block';
@@ -160,6 +164,7 @@
     el.setAttribute('aria-hidden', 'true');
     if (backdrop) { backdrop.remove(); backdrop = null; }
     document.body.classList.remove('modal-open');
+    document.body.style.paddingRight = '';
     unlockScroll();
     openModal = null;
     if (lastFocus && lastFocus.focus) lastFocus.focus();
